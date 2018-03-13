@@ -107,6 +107,10 @@ header {
             nav {
                 a {
                     color: $color-background;
+
+                    &:after {
+                        background-color: $color-background;
+                    }
                 }
             }
             &.fixed {

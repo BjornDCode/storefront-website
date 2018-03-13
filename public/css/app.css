@@ -455,6 +455,10 @@ header nav a.active:after {
     color: #fff;
   }
 
+  header.is-index nav a:after {
+    background-color: #fff;
+  }
+
   header.is-index.fixed nav a {
     color: #545E6B;
   }
