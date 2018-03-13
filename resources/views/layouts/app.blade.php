@@ -7,6 +7,7 @@
         <title>Storefront JS</title>
 
         <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="https://use.typekit.net/ime7qlg.css">
     </head>
     <body>
         <div id="app">

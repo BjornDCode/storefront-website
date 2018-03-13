@@ -135,6 +135,33 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  src: url(/fonts/Avenir-Roman.ttf?7f9734301cda9aacab684b863c6d0983) format("ttf");
+  font-family: 'Avenir';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(/fonts/Avenir-Roman.ttf?7f9734301cda9aacab684b863c6d0983) format("ttf");
+  font-family: 'Avenir';
+  font-weight: bold;
+}
+
+* {
+  font-family: 'Avenir';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: brandon-grotesque, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .intro {
   background-color: pink;
 }
