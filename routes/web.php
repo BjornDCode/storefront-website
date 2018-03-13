@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
+});
+
+Route::get('/roadmap', function () {
+    return view('roadmap.index');
+});
+
+Route::get('/support', function () {
+    return view('support.index');
 });
