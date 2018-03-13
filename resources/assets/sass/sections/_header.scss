@@ -1,0 +1,184 @@
+header {
+    padding: 5px 0;
+    position: fixed;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+
+    transition: all 135ms ease-out;
+
+    &.fixed {
+        background-color: white;
+        border-color: $color-secondary;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav {
+        .nav--toggle {
+            padding: 0;
+            position: relative;
+            z-index: 1000;
+            outline: none;
+        }
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: $color-background;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 135ms ease-out;
+
+        &.open {
+            opacity: 1;
+            pointer-events: all;
+
+            a {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+
+        }
+
+        a {
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+
+            opacity: 0;
+            transform: translateY(15px);
+            pointer-events: none;
+            transition: all 40ms ease-out;
+
+            &:nth-child(1) {
+                transition-delay: 175ms;
+            }
+            &:nth-child(2) {
+                transition-delay: 215ms;
+            }
+            &:nth-child(3) {
+                transition-delay: 255ms;
+            }
+            &:nth-child(4) {
+                transition-delay: 295ms;
+            }
+            &:nth-child(5) {
+                transition-delay: 345ms;
+            }
+
+            &.active {
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 12px;
+                    height: 4px;
+                    border-radius: 2px;
+                    background-color: $color-secondary;
+                }
+            }
+        }
+
+    }
+
+    @include breakpoint('desktop') {
+        padding: 15px 0;
+
+        &.is-index {
+            nav {
+                a {
+                    color: $color-background;
+                }
+            }
+            &.fixed {
+                nav {
+                    a {
+                        color: $color-secondary;
+                    }
+                }
+            }
+        }
+
+        nav {
+            position: static;
+            opacity: 1;
+            pointer-events: all;
+            height: auto;
+            flex-direction: row;
+            background: transparent;
+            align-items: center;
+
+            a {
+                margin-bottom: 0;
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+                transition-delay: 0ms !important;
+                font-size: 14px;
+                color: $color-secondary;
+                margin-left: 40px;
+                position: relative;
+
+                &.button {
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &.active {
+
+                    &:after {
+                        transition: width 50ms ease-out;
+                    }
+
+                    &:hover {
+                        &:after {
+                            width: 40px;
+                        }
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    width: 40px;
+                    height: 4px;
+                    border-radius: 2px;
+                    background-color: $color-secondary;
+
+                    transform: translateX(-50%) scaleX(0);
+                    transition: transform 50ms ease-out;
+                }
+
+                &:hover {
+                    &:after {
+                        transform: translateX(-50%) scaleX(1);
+                    }
+                }
+            }
+        }
+    
+    }
+
+}

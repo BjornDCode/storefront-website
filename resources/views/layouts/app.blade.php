@@ -11,7 +11,9 @@
     </head>
     <body>
         <div id="app">
+            @include('partials._header')
             @yield('content')
+            <section style="height: 100vh; background: pink;"></section>
         </div>
 
         <script src="js/app.js"></script>
