@@ -9,6 +9,7 @@ header {
     &.fixed {
         background-color: white;
         border-color: $color-secondary;
+        z-index: 10;
     }
 
     .container {
@@ -98,6 +99,13 @@ header {
             }
         }
 
+    }
+
+    @include breakpoint('tablet') {
+        .container {
+            max-width: none;
+            padding: 0 15px;
+        }
     }
 
     @include breakpoint('desktop') {

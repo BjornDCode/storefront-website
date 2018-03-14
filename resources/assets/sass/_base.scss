@@ -7,12 +7,35 @@ h1, h2, h3, h4, h5, h6 {
     font-family: brandon-grotesque, sans-serif;
     font-style: normal;
     font-weight: 500;
+    color: $color-secondary;
 }
 
 h1 {
     font-size: 48px;
-    color: $color-secondary;
     margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+
+    @include breakpoint('tablet') {
+        text-align: center;
+    }
+
+}
+
+p {
+    font-size: 20px;
+    line-height: 37px;
+}
+
+.subheader {
+    margin-bottom: 30px;
+    @include breakpoint('tablet') {
+        text-align: center;
+        margin-bottom: 70px;
+    }
 }
 
 a {
@@ -21,13 +44,44 @@ a {
     color: $color-secondary__accent;
 }
 
+ul {
+    padding-left: 15px;
+    li {
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            width: 4px;
+            height: 30px;
+            background-color: $color-secondary;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+}
+
 .container {
     padding: 0 15px;
 
-    @include breakpoint('desktop') {
-        padding: 0;
-        max-width: 960px;
+    @include breakpoint('tablet') {
+        max-width: 500px;
         margin: 0 auto;
+        padding: 0;
+    }
+
+    @include breakpoint('desktop') {
+        max-width: 960px;
     }
 }
 

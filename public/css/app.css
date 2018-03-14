@@ -288,12 +288,39 @@ h6 {
   font-family: brandon-grotesque, sans-serif;
   font-style: normal;
   font-weight: 500;
+  color: #545E6B;
 }
 
 h1 {
   font-size: 48px;
-  color: #545E6B;
   margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    text-align: center;
+  }
+}
+
+p {
+  font-size: 20px;
+  line-height: 37px;
+}
+
+.subheader {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .subheader {
+    text-align: center;
+    margin-bottom: 70px;
+  }
 }
 
 a {
@@ -302,15 +329,49 @@ a {
   color: #788699;
 }
 
+ul {
+  padding-left: 15px;
+}
+
+ul li {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+ul li:before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  width: 4px;
+  height: 30px;
+  background-color: #545E6B;
+}
+
+ul li p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
 .container {
   padding: 0 15px;
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
-    padding: 0;
     max-width: 960px;
-    margin: 0 auto;
   }
 }
 
@@ -338,6 +399,7 @@ header {
 header.fixed {
   background-color: white;
   border-color: #545E6B;
+  z-index: 10;
 }
 
 header .container {
@@ -452,6 +514,13 @@ header nav a.active:after {
   background-color: #545E6B;
 }
 
+@media (min-width: 768px) {
+  header .container {
+    max-width: none;
+    padding: 0 15px;
+  }
+}
+
 @media (min-width: 1024px) {
   header {
     padding: 15px 0;
@@ -556,7 +625,6 @@ header nav a.active:after {
 .intro p {
   color: #C8B25F;
   font-size: 24px;
-  line-height: 37px;
   margin-bottom: 40px;
 }
 
@@ -569,10 +637,6 @@ header nav a.active:after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  .intro .container {
-    max-width: 500px;
   }
 
   .intro .snippet {
@@ -602,6 +666,27 @@ header nav a.active:after {
 
   .intro .snippet {
     max-width: 40%;
+  }
+}
+
+.problem {
+  padding: 50px 0;
+}
+
+@media (min-width: 1024px) {
+  .problem {
+    padding: 70px 0;
+  }
+
+  .problem .subheader {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .problem ul {
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
