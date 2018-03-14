@@ -4,7 +4,7 @@
             <h2>Stay up to date</h2>
             <p>Get updates about the development of the library.</p>
             <form @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
-                <div class="group">
+                <div class="group" :class="form.errors.has('name') ? 'has-error' : ''">
                     <input 
                         type="text" 
                         name="name" 
@@ -13,7 +13,7 @@
                     >
                     <span class="error" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
                 </div>
-                <div class="group">
+                <div class="group" :class="form.errors.has('email') ? 'has-error' : ''">
                     <input 
                         type="email" 
                         name="email" 
