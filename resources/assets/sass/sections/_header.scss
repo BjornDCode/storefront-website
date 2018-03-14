@@ -111,6 +111,11 @@ header {
     @include breakpoint('desktop') {
         padding: 15px 0;
 
+        .container {
+            max-width: 960px;
+            padding: none;
+        }
+
         &.is-index {
             nav {
                 a {

@@ -85,14 +85,12 @@ ul {
     }
 }
 
-.hide-tablet-up {
-    @include breakpoint('tablet') {
-        display: none;
-    }
+::-moz-selection { 
+    background-color: $color-secondary__accent; 
+    color: $color-background;
 }
 
-.hide-desktop {
-    @include breakpoint('desktop') {
-        display: none;
-    }
+::selection { 
+    background-color: $color-secondary__accent; 
+    color: $color-background;
 }

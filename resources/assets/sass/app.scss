@@ -3,6 +3,7 @@
 @import "utils/variables";
 @import "utils/mixins";
 @import "vendor/hamburgers";
+@import "utils/helpers";
 
 @import "fonts";
 @import "base";
@@ -10,5 +11,7 @@
 @import "sections/header";
 @import "sections/intro";
 @import "sections/problem";
+@import "sections/newsletter";
 
 @import "components/button";
+@import "components/text-input";

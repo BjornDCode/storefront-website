@@ -262,6 +262,18 @@ table {
   transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+@media (min-width: 768px) {
+  .hide-tablet-up {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
 @font-face {
   src: url(/fonts/Avenir-Roman.ttf?7f9734301cda9aacab684b863c6d0983) format("ttf");
   font-family: 'Avenir';
@@ -375,16 +387,14 @@ ul li p {
   }
 }
 
-@media (min-width: 768px) {
-  .hide-tablet-up {
-    display: none;
-  }
+::-moz-selection {
+  background-color: #788699;
+  color: #fff;
 }
 
-@media (min-width: 1024px) {
-  .hide-desktop {
-    display: none;
-  }
+::selection {
+  background-color: #788699;
+  color: #fff;
 }
 
 header {
@@ -524,6 +534,11 @@ header nav a.active:after {
 @media (min-width: 1024px) {
   header {
     padding: 15px 0;
+  }
+
+  header .container {
+    max-width: 960px;
+    padding: none;
   }
 
   header.is-index nav a {
@@ -690,6 +705,70 @@ header nav a.active:after {
   }
 }
 
+.newsletter {
+  background-color: #F2F2F2;
+  padding: 25px 0;
+}
+
+.newsletter p {
+  margin-bottom: 30px;
+}
+
+.newsletter .group {
+  position: relative;
+}
+
+.newsletter .group .error {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 11px;
+  background-color: #545E6B;
+  color: #fff;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  padding: 3px;
+}
+
+@media (min-width: 1024px) {
+  .newsletter {
+    padding: 40px 0;
+  }
+
+  .newsletter p {
+    text-align: center;
+  }
+
+  .newsletter form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .newsletter form .group {
+    width: 100%;
+    max-width: 285px;
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+
+  .newsletter form .group.has-error input {
+    border: 2px solid #e74c3c;
+  }
+
+  .newsletter form .group .error {
+    top: calc(100% + 10px);
+    left: 15px;
+    padding: 0;
+    background: none;
+    font-size: 14px;
+    color: #e74c3c;
+  }
+}
+
 .button {
   background-color: #545E6B;
   height: 50px;
@@ -699,7 +778,7 @@ header nav a.active:after {
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.7px;
+  letter-spacing: 2px;
   color: #fff !important;
 }
 
@@ -735,5 +814,120 @@ a.button {
 
 button.button {
   border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+button.button:disabled {
+  background-color: #788699;
+}
+
+button.button:disabled:hover {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+button.button .loader,
+button.button .completed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+button.button .loader {
+  background-color: #788699;
+}
+
+button.button .circle {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #FFF;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+
+button.button .completed {
+  background-color: #2ecc71;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+input[type=text],
+input[type=email] {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #E3E3E3;
+  border: none;
+  outline-color: #788699;
+  border-radius: 3px;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #545E6B;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.group input[type=text],
+.group input[type=email] {
+  margin-bottom: 0;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #545E6B;
+  letter-spacing: 2px;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #545E6B;
+  letter-spacing: 2px;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #545E6B;
+  letter-spacing: 2px;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #545E6B;
+  letter-spacing: 2px;
 }
 

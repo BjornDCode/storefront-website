@@ -1,0 +1,81 @@
+.button {
+    background-color: $color-secondary;
+    height: 50px;
+    padding: 0 50px;
+    border-radius: 3px;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $color-background !important;
+
+    &.small {
+        height: 40px;
+    }
+
+    @include breakpoint('desktop') {
+        transition: transform 50ms ease-out;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+
+a.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.button {
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+    &:disabled {
+        background-color: $color-secondary__accent;
+        &:hover {
+            transform: translateY(0px);
+        }
+    }
+
+    .loader, .completed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .loader {
+        background-color: $color-secondary__accent; 
+    }
+
+    .circle {
+        display: block;
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #FFF;
+        animation: spin 1s infinite linear;
+    }
+
+    .completed {
+        background-color: $color-success;
+    }
+
+}
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+} 

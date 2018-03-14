@@ -22,3 +22,5 @@ Route::get('/roadmap', function () {
 Route::get('/support', function () {
     return view('support.index');
 });
+
+Route::post('/newsletter/subscribe', 'NewsletterController@subscribe');
