@@ -1,4 +1,55 @@
 .intro {
     background-color: $color-primary;
+    background-image: url('../images/pattern.png');
     height: 100vh;
+    padding-top: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        color: $color-primary__accent;
+        font-size: 24px;
+        line-height: 37px;
+        margin-bottom: 40px;
+    }
+
+    .snippet {
+        display: none;
+    }
+
+    @include breakpoint('tablet') {
+        align-items: center;
+        .container {
+            max-width: 500px;
+        }
+
+        .snippet {
+            display: block;
+            margin-top: 100px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    @include breakpoint('desktop') {
+        .container {
+            max-width: 960px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .copy {
+            max-width: 50%;
+        }
+
+        .snippet {
+            max-width: 40%;
+        }
+
+    }
+
 }

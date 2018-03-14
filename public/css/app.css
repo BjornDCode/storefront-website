@@ -290,6 +290,12 @@ h6 {
   font-weight: 500;
 }
 
+h1 {
+  font-size: 48px;
+  color: #545E6B;
+  margin-bottom: 30px;
+}
+
 a {
   text-decoration: none;
   font-weight: bold;
@@ -530,7 +536,73 @@ header nav a.active:after {
 
 .intro {
   background-color: #FFE273;
+  background-image: url(/images/pattern.png?0c7b104c6c3146f5dc242238a19d789e);
   height: 100vh;
+  padding-top: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.intro p {
+  color: #C8B25F;
+  font-size: 24px;
+  line-height: 37px;
+  margin-bottom: 40px;
+}
+
+.intro .snippet {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .intro .container {
+    max-width: 500px;
+  }
+
+  .intro .snippet {
+    display: block;
+    margin-top: 100px;
+  }
+
+  .intro .snippet img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro .container {
+    max-width: 960px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .intro .copy {
+    max-width: 50%;
+  }
+
+  .intro .snippet {
+    max-width: 40%;
+  }
 }
 
 .button {
@@ -565,9 +637,9 @@ header nav a.active:after {
 }
 
 a.button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
