@@ -12,7 +12,7 @@
         </span>
         <span class="completed" v-else-if="completed">
             <slot name="completed">
-                    Completed
+                Completed
             </slot>
         </span>
         <slot>

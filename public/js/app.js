@@ -30670,7 +30670,7 @@ var Form = function () {
         key: 'onFail',
         value: function onFail(errors) {
             this.loading = false;
-            this.errors.record(errors);
+            this.errors.record(errors || { server: 'Failed' });
         }
     }, {
         key: 'post',
@@ -30805,7 +30805,7 @@ var render = function() {
               { staticClass: "completed" },
               [
                 _vm._t("completed", [
-                  _vm._v("\n                Completed\n        ")
+                  _vm._v("\n            Completed\n        ")
                 ])
               ],
               2

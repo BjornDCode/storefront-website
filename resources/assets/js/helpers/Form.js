@@ -59,7 +59,7 @@ export default class Form {
 
     onFail(errors) {
         this.loading = false;
-        this.errors.record(errors)
+        this.errors.record(errors || { server: 'Failed' })
     }
 
     post(url) {

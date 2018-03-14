@@ -30,7 +30,7 @@
                     <span slot="completed">Subscribed!</span>
                     Get Updates
                 </submit-button>
-
+                <span class="error server-error" v-if="form.errors.has('server')">Something went wrong.</span>
             </form>
         </div>
     </section>

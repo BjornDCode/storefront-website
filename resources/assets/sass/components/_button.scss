@@ -42,7 +42,7 @@ button.button {
         }
     }
 
-    .loader, .completed {
+    .loader, .completed, .error {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -70,6 +70,10 @@ button.button {
 
     .completed {
         background-color: $color-success;
+    }
+
+    .error {
+        background-color: $color-error;
     }
 
 }

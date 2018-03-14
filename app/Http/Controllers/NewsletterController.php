@@ -17,7 +17,7 @@ class NewsletterController extends Controller
 
         Newsletter::subscribeOrUpdate($data['email'], [ 'NAME' => $data['name'] ], 'newsletter');
 
-        if (Newsletter::getLastError()) {
+        if (!Newsletter::lastActionSucceeded()) {
             return response("It was not possible to subscribe you at this time", 422);
         }
 
