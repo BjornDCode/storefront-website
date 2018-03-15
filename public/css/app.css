@@ -907,6 +907,66 @@ header nav a.active:after {
   }
 }
 
+.support {
+  padding-top: 80px;
+}
+
+.support .queries,
+.support .issues,
+.support .features {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .support {
+    padding-top: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .support {
+    padding-top: 150px;
+  }
+
+  .support .primary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .support .queries {
+    max-width: 500px;
+  }
+
+  .support .queries p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .support .secondary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .support .issues,
+  .support .features {
+    max-width: calc(50% - 15px);
+  }
+
+  .support .issues h2,
+  .support .features h2 {
+    text-align: left;
+  }
+}
+
 .button {
   background-color: #545E6B;
   height: 50px;
