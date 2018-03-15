@@ -3,12 +3,6 @@
 
     @include breakpoint('desktop') {
         padding: 70px 0;
-        
-        .subheader {
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
         ul {
             max-width: 500px;

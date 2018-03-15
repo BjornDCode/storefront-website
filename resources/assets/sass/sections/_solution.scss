@@ -1,0 +1,42 @@
+.solution {
+    padding: 50px 0;
+
+    ul {
+        margin-bottom: 30px;
+        li {
+            &:before {
+                top: -6px;
+            }
+        }
+    }
+
+    @include breakpoint('tablet') {
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 0;
+
+            li {
+                width: calc(50% - 15px);
+                margin-bottom: 50px;
+            }
+        }
+
+        .demo {
+            text-align: center;
+        }
+    }
+
+    @include breakpoint('desktop') {
+        padding: 70px 0;
+
+        ul {
+            li {
+                width: calc(33.33% - 20px;);
+            }
+        }
+    }
+
+}

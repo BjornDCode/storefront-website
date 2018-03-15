@@ -281,7 +281,7 @@ table {
 }
 
 @font-face {
-  src: url(/fonts/Avenir-Roman.ttf?7f9734301cda9aacab684b863c6d0983) format("ttf");
+  src: url(/fonts/Avenir-Black.ttf?aa91c02d8430510b523d45a852f72593) format("ttf");
   font-family: 'Avenir';
   font-weight: bold;
 }
@@ -292,11 +292,7 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   font-family: brandon-grotesque, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -319,6 +315,13 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #545E6B;
+}
+
 p {
   font-size: 20px;
   line-height: 37px;
@@ -332,6 +335,14 @@ p {
   .subheader {
     text-align: center;
     margin-bottom: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .subheader {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -367,6 +378,12 @@ ul li:before {
 ul li p {
   font-size: 18px;
   line-height: 30px;
+}
+
+@media (min-width: 1024px) {
+  ul li:before {
+    width: 6px;
+  }
 }
 
 .container {
@@ -693,12 +710,6 @@ header nav a.active:after {
     padding: 70px 0;
   }
 
-  .problem .subheader {
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .problem ul {
     max-width: 500px;
     margin: 0 auto;
@@ -787,6 +798,51 @@ header nav a.active:after {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+  }
+}
+
+.solution {
+  padding: 50px 0;
+}
+
+.solution ul {
+  margin-bottom: 30px;
+}
+
+.solution ul li:before {
+  top: -6px;
+}
+
+@media (min-width: 768px) {
+  .solution ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 0;
+  }
+
+  .solution ul li {
+    width: calc(50% - 15px);
+    margin-bottom: 50px;
+  }
+
+  .solution .demo {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .solution {
+    padding: 70px 0;
+  }
+
+  .solution ul li {
+    width: calc(33.33% - 20px);
   }
 }
 
