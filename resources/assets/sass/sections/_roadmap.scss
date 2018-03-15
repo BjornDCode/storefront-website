@@ -1,0 +1,72 @@
+.roadmap {
+    padding-top: 80px;
+
+    .copy {
+        margin-bottom: 70px;
+    }
+
+    .group {
+        margin-bottom: 50px;
+
+        > h3 {
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .feature {
+        background-color: $color-background__accent;
+        margin-bottom: 10px;
+
+        &--header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+
+            .icon {
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-position: center;
+                background-image: url('../images/open.svg');
+                background-size: cover;
+                transition: transform 100ms ease-out;
+
+                &.open {
+                    transform: rotate(45deg);
+                }
+
+            }
+
+        }
+
+        &--body {
+            padding: 15px;
+            padding-top: 0;
+
+            P {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @include breakpoint('tablet') {
+        padding-top: 120px;
+
+        .feature {
+            &--header {
+                cursor: pointer;
+            }
+        }
+    }
+
+    @include breakpoint('desktop') {
+        padding-top: 150px;
+
+        .features {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+}

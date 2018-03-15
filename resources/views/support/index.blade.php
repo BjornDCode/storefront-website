@@ -6,7 +6,7 @@
             <div class="primary">
                 <div class="queries">
                     <h2>Support Queries</h2>
-                    <p>
+                    <p class="big">
                         Feel free to send an email if you have questions about licensing, the library or another subject. I can be reached at <a href="mailto:support@storefront.io">support@storefront.io</a>.
                     </p>
                 </div>
