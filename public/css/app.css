@@ -846,6 +846,21 @@ header nav a.active:after {
   }
 }
 
+.get-started {
+  background-color: #F2F2F2;
+  padding: 25px;
+}
+
+.get-started p {
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .get-started {
+    padding: 40px 0;
+  }
+}
+
 .button {
   background-color: #545E6B;
   height: 50px;

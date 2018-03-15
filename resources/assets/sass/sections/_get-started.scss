@@ -1,0 +1,16 @@
+.get-started {
+    background-color: $color-background__accent;
+    padding: 25px;
+
+    p {
+        margin: 0 auto;
+    }
+
+    @include breakpoint('desktop') {
+        padding: 40px 0;
+
+        p {
+            
+        }
+    }
+}
