@@ -1,3 +1,4 @@
+var VueScrollTo = require('vue-scrollto');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -5,9 +6,18 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Vue = require('vue');
+
+Vue.use(VueScrollTo, {
+    container: 'body',
+    duration: 500,
+    easing: 'ease',
+    offset: 0
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

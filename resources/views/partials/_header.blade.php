@@ -19,10 +19,16 @@
                 </button>
                 <nav :class="open ? 'open' : ''">
                     <a href="/" class="hide-desktop {{ request()->is('/') ? 'active' : '' }}" >Home</a>  
-                    <a href="/docs" class="{{ request()->is('docs') ? 'active' : '' }}">Documentation</a>  
-                    <a href="/roadmap" class="{{ request()->is('roadmap') ? 'active' : '' }}">Roadmap</a>  
+                    <a href="/docs" class="{{ request()->is('docs') ? 'active' : '' }}">Documentation</a>
+                    <a href="/roadmap" class="{{ request()->is('roadmap') ? 'active' : '' }}">Roadmap</a>
                     <a href="/support" class="{{ request()->is('support') ? 'active' : '' }}">Support</a>
-                    <a href="/#license" class="button small">Buy</a>  
+
+                    @if (request()->is('/'))
+                        <a href="#" v-scroll-to="'#license'" class="button small">Buy</a>  
+                    @else
+                        <a href="/#license" class="button small">Buy</a>  
+                    @endif
+
                 </nav>
             </div>
         </div>
