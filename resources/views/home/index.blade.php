@@ -6,4 +6,5 @@
     @include('home._newsletter')
     @include('home._solution')
     @include('home._get-started')
+    @include('home._license')
 @endsection

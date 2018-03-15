@@ -861,6 +861,52 @@ header nav a.active:after {
   }
 }
 
+.license {
+  padding: 50px 0;
+  background-color: #FFE273;
+  background-image: url(/images/pattern.png?0c7b104c6c3146f5dc242238a19d789e);
+}
+
+.license .copy > div:first-of-type {
+  margin-bottom: 30px;
+}
+
+.license .copy span {
+  font-weight: bold;
+}
+
+.license p {
+  color: #C8B25F;
+}
+
+@media (min-width: 1024px) {
+  .license {
+    padding: 70px;
+  }
+
+  .license h2 {
+    margin-bottom: 70px;
+  }
+
+  .license .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .license .copy {
+    max-width: 50%;
+  }
+
+  .license .buy {
+    max-width: 40%;
+    width: 100%;
+  }
+}
+
 .button {
   background-color: #545E6B;
   height: 50px;
