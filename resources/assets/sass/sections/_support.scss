@@ -7,13 +7,17 @@
 
     @include breakpoint('tablet') {
         padding-top: 120px;
+
+        p {
+            text-align: center;
+        }
     }
 
     @include breakpoint('desktop') {
         padding-top: 150px;
         
         .primary {
-            margin-bottom: 50px;
+            margin-bottom: 70px;
         }
 
         .secondary {

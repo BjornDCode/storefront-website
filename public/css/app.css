@@ -944,6 +944,10 @@ header nav a.active:after {
   .support {
     padding-top: 120px;
   }
+
+  .support p {
+    text-align: center;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -952,7 +956,7 @@ header nav a.active:after {
   }
 
   .support .primary {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 
   .support .secondary {
