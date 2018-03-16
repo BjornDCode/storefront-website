@@ -24,3 +24,5 @@ Route::get('/support', function () {
 });
 
 Route::post('/newsletter/subscribe', 'NewsletterController@subscribe');
+
+Route::post('/license', 'LicenseController@store');

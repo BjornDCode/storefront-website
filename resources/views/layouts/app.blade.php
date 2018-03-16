@@ -15,6 +15,7 @@
             @yield('content')
         </div>
 
+        <script src="https://js.stripe.com/v3/"></script>
         <script src="js/app.js"></script>
     </body>
 </html>

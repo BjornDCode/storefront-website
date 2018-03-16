@@ -29,6 +29,7 @@ Vue.component('header-component', require('./components/Header.vue'));
 Vue.component('newsletter-form', require('./components/NewsletterForm.vue'));
 Vue.component('submit-button', require('./components/SubmitButton.vue'));
 Vue.component('roadmap-feature', require('./components/RoadmapFeature.vue'));
+Vue.component('checkout-form', require('./components/CheckoutForm.vue'));
 
 const app = new Vue({
     el: '#app'

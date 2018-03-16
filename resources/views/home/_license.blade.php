@@ -17,7 +17,45 @@
                 </div>
             </div>
             <div class="buy">
-                form
+                <checkout-form inline-template>
+                    <form class="checkout-form" @submit.prevent="onSubmit">
+                    {{-- <form class="checkout-form" method="post" action="/license"> --}}
+                        {{ csrf_field() }}
+                        <div class="group">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="EMAIL"
+                                v-model="form.email"
+                            >
+                        </div>
+                        <div class="group">
+                            <input 
+                                type="text" 
+                                name="company" 
+                                placeholder="COMPANY"
+                                v-model="form.company"
+                            >
+                        </div>
+                        <div class="group">
+                            <input 
+                                type="text" 
+                                name="domain" 
+                                placeholder="DOMAIN"
+                                v-model="form.domain"
+                            >
+                        </div>
+                        <div class="group">
+                                <card class='stripe-card'
+                                    :class='{ complete }'
+                                    stripe='{{ config('services.stripe.key') }}'
+                                    :options='{}'
+                                    @change='complete = $event.complete'
+                                />
+                        </div>
+                        <button type="submit" class="button">Purchase</button>
+                    </form> 
+                </checkout-form>
             </div>
         </div>
     </div>
