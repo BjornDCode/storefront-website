@@ -16,7 +16,7 @@ class CreateLicensesTable extends Migration
         Schema::create('licenses', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('valid')->default(1);
-            $table->string('key', 32);
+            $table->string('key', 37);
             $table->string('company');
             $table->string('domain');
             $table->string('customer_id');

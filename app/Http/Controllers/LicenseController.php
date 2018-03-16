@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\License;
 use App\Customer;
 use Stripe\Charge;
+use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 use Stripe\Customer as StripeCustomer;
+
 
 class LicenseController extends Controller
 {
@@ -48,14 +50,12 @@ class LicenseController extends Controller
         }
 
         $license = License::create([
-            'key' => 'generate_key',
+            'key' => Uuid::uuid4()->toString(),
             'company' => $data['company'],
             'domain' => $data['domain'],
             'customer_id' => $charge->customer,
             'transaction_id' => $charge->id
         ]);
-
-        // UNIT TESTING: Test relationship between license and customer
 
         return 'All Good';
     }
