@@ -13,9 +13,6 @@ class PurchaseLicenseTest extends TestCase
     /** @test */
     public function a_user_can_buy_a_license()
     {
-        // Given we have a visitor
-        // Who buys a license
-
         StripeTestToken::setApiKey(config('services.stripe.secret'));
 
         $formData = [
@@ -35,10 +32,6 @@ class PurchaseLicenseTest extends TestCase
             'company' => $formData['company'],
             'domain' => $formData['domain']
         ]);
-
-        // A customer should be created in the database? w. email (only email and stripeCustomerId) ????
-        // A license should exist in the database
-
     }
 
     /** @test */
