@@ -17,9 +17,9 @@ class License extends Model
 
     public function generatePdf() 
     {
-        $pdf = PDF::loadView('pdf.license', ['data' => $this]);
+        $pdf = PDF::loadView('pdf.license', ['data' => $this])->output();
 
-        Storage::put("pdf/{$this->key}.pdf", $pdf->output());
+        return $pdf;
     }
 
 }

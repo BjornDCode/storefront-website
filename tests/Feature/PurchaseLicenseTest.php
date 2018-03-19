@@ -3,7 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Mail\LicensePurchased;
 use JacobBennett\StripeTestToken;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -38,6 +40,7 @@ class PurchaseLicenseTest extends TestCase
     /** @test */
     public function a_user_receives_their_purchased_license_on_email()
     {
+        Mail::fake();
         Storage::fake('local');
 
         StripeTestToken::setApiKey(config('services.stripe.secret'));
@@ -51,12 +54,9 @@ class PurchaseLicenseTest extends TestCase
 
         $response = $this->post('/license', $formData);
 
-        $key = $response->decodeResponseJson()['key'];
-        Storage::disk('local')->assertExists('pdf/'. $key . '.pdf');
-
-        // Who buys a license
-        // A pdf should be generated with the license
-        // The visitor should be emailed the license pdf
+        Mail::assertSent(LicensePurchased::class, function($mail) use ($formData) {
+            return $mail->hasTo($formData['email']);
+        });
     }
 
     /** @test */

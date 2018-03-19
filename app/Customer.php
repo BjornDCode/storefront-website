@@ -5,6 +5,8 @@ namespace App;
 use App\License;
 use Stripe\Charge;
 use Ramsey\Uuid\Uuid;
+use App\Mail\LicensePurchased;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Customer as StripeCustomer;
 use Illuminate\Database\Eloquent\Model;
 
@@ -37,8 +39,8 @@ class Customer extends Model
     {
         $charge = $this->createCharge();
         $license = $this->createLicense($data, $charge);
-        $license->generatePdf();
-
+        $pdf = $license->generatePdf();
+        $this->mailLicense($license, $pdf);
         return $license;
     }
 
@@ -60,6 +62,11 @@ class Customer extends Model
             'customer_id' => $charge->customer,
             'transaction_id' => $charge->id
         ]);
+    }
+
+    public function mailLicense($license, $pdf) 
+    {
+        Mail::to($this->email)->send(new LicensePurchased($license, $pdf));
     }
 
 }
