@@ -51,7 +51,6 @@ export default class Form {
     }
 
     onSuccess(data) {
-
         this.loading = false;
         this.completed = true;
         this.reset();

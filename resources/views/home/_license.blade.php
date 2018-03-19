@@ -19,7 +19,16 @@
             <div class="buy">
                 <h3>Buy a license</h3>
                 <checkout-form inline-template>
-                    <form class="checkout-form" @submit.prevent="onSubmit">
+                    <div class="completed" v-if="completed">
+                        <p>Thanks for buying a Storefront license. You will receive a confirmation email soon. In the meantime you can download the license here.</p>
+                        <a href="#" class="button">Download</a>
+                    </div> 
+                    <form 
+                        class="checkout-form" 
+                        @submit.prevent="onSubmit" 
+                        @keydown="form.errors.clear($event.target.name)"
+                        v-else
+                    >
                         {{ csrf_field() }}
                         <div class="group" :class="form.errors.has('email') ? 'has-error' : ''">
                             <input 
@@ -50,8 +59,16 @@
                         </div>
                         <div class="group">
                                 <div ref="card" class="stripe-card"></div>
+                                <span class="error" v-if="form.errors.has('card')" v-text="form.errors.get('card')"></span>
                         </div>
-                        <button type="submit" class="button">Purchase</button>
+                        <submit-button
+                            :loading="form.loading"
+                            :has-errors="form.errors.any()"
+                            :completed="form.completed"
+                        >
+                            <span slot="completed">Thanks!</span>
+                            Purchase
+                        </submit-button>
                         <span class="error server-error" v-if="form.errors.has('server')" v-html="form.errors.get('server')"></span>
                     </form> 
                 </checkout-form>

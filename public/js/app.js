@@ -13937,7 +13937,6 @@ var Form = function () {
     }, {
         key: 'onSuccess',
         value: function onSuccess(data) {
-
             this.loading = false;
             this.completed = true;
             this.reset();
@@ -13983,7 +13982,9 @@ var Errors = function () {
     _createClass(Errors, [{
         key: 'any',
         value: function any() {
-            return !Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(this.errors);
+            var errors = Object.assign({}, this.errors);
+            delete errors['server'];
+            return !Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(errors);
         }
     }, {
         key: 'get',
@@ -31543,13 +31544,22 @@ var stripe = Stripe('pk_test_mw71bU6Bqr8NLx1hHadiYxqb'),
         onSubmit: function onSubmit(e) {
             var _this = this;
 
+            if (!this.$refs.card.classList.contains('StripeElement--complete')) {
+                this.form.errors.record({ 'card': ['Please provide valid card details.'] });
+                return;
+            }
+
+            this.form.loading = true;
+
             stripe.createToken(card).then(function (result) {
                 if (result.error) {
                     return;
                 }
 
                 _this.form.token = result.token.id;
-                _this.form.post('/license');
+                _this.form.post('/license').then(function (data) {
+                    _this.completed = true;
+                });
             });
         }
     }

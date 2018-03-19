@@ -49,6 +49,13 @@ export default {
 
     methods: {
         onSubmit(e) {
+            if (!this.$refs.card.classList.contains('StripeElement--complete')) {
+                this.form.errors.record({ 'card': ['Please provide valid card details.'] });
+                return;
+            }
+
+            this.form.loading = true;
+
             stripe.createToken(card).then(result => {
                 if (result.error) {
                     return;
@@ -56,6 +63,9 @@ export default {
                 
                 this.form.token = result.token.id
                 this.form.post('/license')
+                    .then(data => {
+                        this.completed = true;
+                    })
             })
         }
     }    

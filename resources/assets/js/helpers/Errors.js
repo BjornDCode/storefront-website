@@ -7,7 +7,9 @@ export default class Errors {
     }
 
     any() {
-        return !isEmpty(this.errors);
+        const errors = Object.assign({}, this.errors);
+        delete errors['server'];
+        return !isEmpty(errors);
     }
 
     get(field) {

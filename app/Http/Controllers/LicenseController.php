@@ -36,7 +36,6 @@ class LicenseController extends Controller
             return response($e->jsonBody['error'], $e->httpStatus);
         } catch (Exception $e) {
             return response('Something went wrong.', 400);
-            // return something went wrong
         }
 
         return $license;

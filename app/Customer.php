@@ -21,10 +21,10 @@ class Customer extends Model
             'source'  => $token
         ]);
 
-        return Customer::updateOrCreate([
-            'email' => $email,
-            'stripe_id' => $stripeCustomer->id
-        ]);
+        return Customer::updateOrCreate(
+            ['email' => $email],
+            ['stripe_id' => $stripeCustomer->id]
+        );
     }
 
     public function purchaseLicense($data) 
