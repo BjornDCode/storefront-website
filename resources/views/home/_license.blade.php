@@ -6,7 +6,7 @@
                 <div>
                     <h3>Commercial License</h3>
                     <p>
-                        In order to use Storefront JS on a commercial site you need to buy a license. It costs <span>49$</span>. A license is valid for one website.
+                        In order to use Storefront JS on a commercial site you need to buy a license. It costs <span>49$</span>. A license is valid for one website. Once you've purchased a license you'll receive a PDF.
                     </p>
                 </div>
                 <div>
@@ -19,7 +19,6 @@
             <div class="buy">
                 <checkout-form inline-template>
                     <form class="checkout-form" @submit.prevent="onSubmit">
-                    {{-- <form class="checkout-form" method="post" action="/license"> --}}
                         {{ csrf_field() }}
                         <div class="group">
                             <input 

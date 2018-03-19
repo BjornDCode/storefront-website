@@ -36,7 +36,10 @@ class Customer extends Model
     public function purchaseLicense($data) 
     {
         $charge = $this->createCharge();
-        $this->createLicense($data, $charge);
+        $license = $this->createLicense($data, $charge);
+        $license->generatePdf();
+
+        return $license;
     }
 
     private function createCharge() 
@@ -50,7 +53,7 @@ class Customer extends Model
 
     private function createLicense($formData, $charge) 
     {
-        $license = License::create([
+        return License::create([
             'key' => Uuid::uuid4()->toString(),
             'company' => $formData['company'],
             'domain' => $formData['domain'],
