@@ -4,6 +4,8 @@
     background-image: url('../images/pattern.png');
 
     .copy {
+        margin-bottom: 30px;
+
         > div {
             &:first-of-type {
                 margin-bottom: 30px;
@@ -17,6 +19,23 @@
 
     p {
         color: $color-primary__accent;
+    }
+
+    .buy {
+        h3 {
+            margin-bottom: 15px;
+        }
+
+        input[type=text], input[type=email] {
+            background-color: $color-primary__accent;
+        }
+
+    }
+
+    .stripe-card {
+        background-color: $color-primary__accent;
+        padding: 0 15px;
+        border-radius: 3px;
     }
 
     @include breakpoint('desktop') {

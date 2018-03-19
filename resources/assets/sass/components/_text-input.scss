@@ -24,17 +24,17 @@ input[type=text], input[type=email] {
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $color-secondary;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 ::-moz-placeholder { /* Firefox 19+ */
     color: $color-secondary;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 :-ms-input-placeholder { /* IE 10+ */
     color: $color-secondary;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 :-moz-placeholder { /* Firefox 18- */
     color: $color-secondary;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }

@@ -10,29 +10,21 @@ use Illuminate\Support\Facades\Mail;
 use Stripe\Customer as StripeCustomer;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Customer extends Model
 {
     protected $guarded = [];
 
     public static function findOrCreate($email, $token) 
     {
-        $customer = Customer::where('email', $email)->first();
-
-        if ($customer) {
-            return $customer;
-        }
-
         $stripeCustomer = StripeCustomer::create([
             'email' => $email,
             'source'  => $token
         ]);
 
-        return Customer::create([
+        return Customer::updateOrCreate([
             'email' => $email,
             'stripe_id' => $stripeCustomer->id
         ]);
-        
     }
 
     public function purchaseLicense($data) 
@@ -46,11 +38,12 @@ class Customer extends Model
 
     private function createCharge() 
     {
-        return Charge::create([
+        $charge = Charge::create([
             'customer' => $this->stripe_id,
             'amount'   => 4900,
             'currency' => 'usd'
         ]);
+        return $charge;
     }
 
     private function createLicense($formData, $charge) 

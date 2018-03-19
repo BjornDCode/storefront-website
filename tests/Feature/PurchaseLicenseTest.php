@@ -81,4 +81,27 @@ class PurchaseLicenseTest extends TestCase
         ]);
     }
 
+    /** @test */
+    public function a_user_cannot_buy_a_license_if_they_provide_an_invalid_payment_token()
+    {
+        StripeTestToken::setApiKey(config('services.stripe.secret'));
+
+        $formData = [
+            'email' => 'test@example.com',
+            'company' => 'Test Company',
+            'domain' => 'test.com',
+            'token' => StripeTestToken::declineCard()
+        ];
+
+        $this->post('/license', $formData);
+
+        $this->assertDatabaseMissing('customers', [
+            'email' => $formData['email']
+        ]);
+
+        $this->assertDatabaseMissing('licenses', [
+            'domain' => $formData['domain']
+        ]);
+    }
+
 }

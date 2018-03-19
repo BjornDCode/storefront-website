@@ -17,42 +17,42 @@
                 </div>
             </div>
             <div class="buy">
+                <h3>Buy a license</h3>
                 <checkout-form inline-template>
                     <form class="checkout-form" @submit.prevent="onSubmit">
                         {{ csrf_field() }}
-                        <div class="group">
+                        <div class="group" :class="form.errors.has('email') ? 'has-error' : ''">
                             <input 
                                 type="email" 
                                 name="email" 
                                 placeholder="EMAIL"
                                 v-model="form.email"
                             >
+                            <span class="error" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
                         </div>
-                        <div class="group">
+                        <div class="group" :class="form.errors.has('company') ? 'has-error' : ''">
                             <input 
                                 type="text" 
                                 name="company" 
                                 placeholder="COMPANY"
                                 v-model="form.company"
                             >
+                            <span class="error" v-if="form.errors.has('company')" v-text="form.errors.get('company')"></span>
                         </div>
-                        <div class="group">
+                        <div class="group" :class="form.errors.has('domain') ? 'has-error' : ''">
                             <input 
                                 type="text" 
                                 name="domain" 
                                 placeholder="DOMAIN"
                                 v-model="form.domain"
                             >
+                            <span class="error" v-if="form.errors.has('domain')" v-text="form.errors.get('domain')"></span>
                         </div>
                         <div class="group">
-                                <card class='stripe-card'
-                                    :class='{ complete }'
-                                    stripe='{{ config('services.stripe.key') }}'
-                                    :options='{}'
-                                    @change='complete = $event.complete'
-                                />
+                                <div ref="card" class="stripe-card"></div>
                         </div>
                         <button type="submit" class="button">Purchase</button>
+                        <span class="error server-error" v-if="form.errors.has('server')" v-html="form.errors.get('server')"></span>
                     </form> 
                 </checkout-form>
             </div>

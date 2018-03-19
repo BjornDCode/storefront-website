@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/license', function() {
-    return view('pdf.license', [ 'data' => (object)[
-        'company' => 'Company',
-        'domain' => 'Domain.com',
-        'key' => '1498debd-3a33-4df8-8775-7b3e150521f0'
-    ]]);
-});
-
 Route::get('/', function () {
     return view('home.index');
 });

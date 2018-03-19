@@ -6,35 +6,6 @@
         margin-bottom: 30px;
     }
 
-    form {
-        position: relative;
-    }
-
-    .group {
-        position: relative;
-    }
-
-    .error {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-size: 11px;
-        background-color: $color-secondary;
-        color: $color-background;
-        border-bottom-right-radius: 3px;
-        border-top-left-radius: 3px;
-        padding: 3px;
-    }
-
-    .server-error {
-        top: calc(100% + 5px);
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        background: none;
-        color: $color-error;
-    }
-
     @include breakpoint('desktop') {
         padding: 40px 0;
 
@@ -47,33 +18,10 @@
             justify-content: center;
 
             .group {
-                width: 100%;
                 max-width: 285px;
                 margin-right: 15px;
                 margin-bottom: 0;
-
-                &.has-error {
-                    input {
-                        border: 2px solid $color-error;
-                    }
-                }
             }
-
-            .error {
-                top: calc(100% + 10px);
-                left: 15px;
-                padding: 0;
-                background: none;
-                font-size: 14px;
-                color: $color-error;
-            }
-
-            .server-error {
-                top: calc(100% + 10px);
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
         }
     }
 

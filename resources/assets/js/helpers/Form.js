@@ -43,9 +43,9 @@ export default class Form {
                     resolve(response.data); 
                 })
                 .catch(error => {
-                    this.onFail(error.response.data.errors);
+                    this.onFail(error.response.data);
 
-                    reject(error.response.data.errors);
+                    reject(error.response.data);
                 })
         })
     }
@@ -57,9 +57,9 @@ export default class Form {
         this.reset();
     }
 
-    onFail(errors) {
+    onFail(error) {
         this.loading = false;
-        this.errors.record(errors || { server: 'Failed' })
+        this.errors.record(error.errors || { server: [error.message || 'Something went wrong.']  })
     }
 
     post(url) {
