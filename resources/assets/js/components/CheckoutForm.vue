@@ -1,4 +1,5 @@
 <script>
+import tippy from 'tippy.js'
 import Form from '../helpers/Form';
 
 let stripe = Stripe('pk_test_mw71bU6Bqr8NLx1hHadiYxqb'),
@@ -45,6 +46,10 @@ export default {
 
         card = elements.create('card', options);
         card.mount(this.$refs.card);
+
+        tippy('.tooltip', {
+            
+        });
     },
 
     methods: {

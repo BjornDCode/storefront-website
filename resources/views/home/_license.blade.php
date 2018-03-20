@@ -20,8 +20,9 @@
                 <h3>Buy a license</h3>
                 <checkout-form inline-template>
                     <div class="completed" v-if="completed">
-                        <p>Thanks for buying a Storefront license. You will receive a confirmation email soon. In the meantime you can download the license here.</p>
-                        <a href="#" class="button">Download</a>
+                        <p>
+                            Thanks for purchasing a Storefront license. You will receive your license in an email shortly. Check out how to use Storefront in the <a href="/docs">docs</a>.
+                        </p>
                     </div> 
                     <form 
                         class="checkout-form" 
@@ -37,6 +38,9 @@
                                 placeholder="EMAIL"
                                 v-model="form.email"
                             >
+                            @component('components.tooltip')
+                                The email which the license will be sent to
+                            @endcomponent
                             <span class="error" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
                         </div>
                         <div class="group" :class="form.errors.has('company') ? 'has-error' : ''">
@@ -46,6 +50,9 @@
                                 placeholder="COMPANY"
                                 v-model="form.company"
                             >
+                            @component('components.tooltip')
+                                The name of the company who owns the webshop
+                            @endcomponent
                             <span class="error" v-if="form.errors.has('company')" v-text="form.errors.get('company')"></span>
                         </div>
                         <div class="group" :class="form.errors.has('domain') ? 'has-error' : ''">
@@ -55,6 +62,9 @@
                                 placeholder="DOMAIN"
                                 v-model="form.domain"
                             >
+                            @component('components.tooltip')
+                                The domain the webshop will be hosted on
+                            @endcomponent
                             <span class="error" v-if="form.errors.has('domain')" v-text="form.errors.get('domain')"></span>
                         </div>
                         <div class="group">

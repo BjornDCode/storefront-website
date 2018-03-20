@@ -93,7 +93,7 @@ class PurchaseLicenseTest extends TestCase
             'token' => StripeTestToken::declineCard()
         ];
 
-        $this->post('/license', $formData);
+        $response = $this->post('/license', $formData);
 
         $this->assertDatabaseMissing('customers', [
             'email' => $formData['email']

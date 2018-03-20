@@ -7,6 +7,29 @@ form {
         position: relative;
     }
 
+    .tooltip {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 5px;
+        background: $color-secondary;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 50%;
+        }
+
+        path {
+            fill: $color-background;; 
+        }
+
+    }
+
     .error {
         position: absolute;
         bottom: 0;
@@ -38,6 +61,11 @@ form {
                     border: 2px solid $color-error;
                 }
             }
+        }
+
+        .tooltip {
+            right: auto;
+            left: calc(100% + 10px);
         }
 
         .error {

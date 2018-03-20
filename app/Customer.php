@@ -33,6 +33,7 @@ class Customer extends Model
         $license = $this->createLicense($data, $charge);
         $pdf = $license->generatePdf();
         $this->mailLicense($license, $pdf);
+        
         return $license;
     }
 
