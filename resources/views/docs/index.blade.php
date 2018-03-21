@@ -7,9 +7,11 @@
 @section('content')
     <section class="docs">
         <div class="container">
-{{--             <aside>
-                {!! $index !!}
-            </aside> --}}
+            <docs-navigation inline-template>
+                <aside>
+                    {!! $index !!}
+                </aside>
+            </docs-navigation>
             <article>
                 {!! $content  !!}
             </article>
