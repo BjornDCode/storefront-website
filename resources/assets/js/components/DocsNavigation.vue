@@ -3,7 +3,7 @@
         mounted() {
             this.setActiveElement();
             document.querySelectorAll('aside h2').forEach(elem => {
-                elem.addEventListener('click', e => this.toggleNavItem(e.currentTarget.nextSibling.nextSibling));
+                elem.addEventListener('click', e => this.toggleNavItem(e.currentTarget.parentElement));
             });
         },
 
@@ -11,9 +11,12 @@
 
             setActiveElement() {
                 const activeElement = document.querySelector('aside a[href="' + window.location.pathname + '"]');
+
+                if (!activeElement) return;
+
                 activeElement.classList.add('active');
 
-                this.toggleNavItem(activeElement.parentElement.parentElement);
+                this.toggleNavItem(activeElement.parentElement.parentElement.parentElement);
             },
 
             toggleNavItem(elem) {

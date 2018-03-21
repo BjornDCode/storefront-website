@@ -35836,7 +35836,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.setActiveElement();
         document.querySelectorAll('aside h2').forEach(function (elem) {
             elem.addEventListener('click', function (e) {
-                return _this.toggleNavItem(e.currentTarget.nextSibling.nextSibling);
+                return _this.toggleNavItem(e.currentTarget.parentElement);
             });
         });
     },
@@ -35845,9 +35845,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         setActiveElement: function setActiveElement() {
             var activeElement = document.querySelector('aside a[href="' + window.location.pathname + '"]');
+
+            if (!activeElement) return;
+
             activeElement.classList.add('active');
 
-            this.toggleNavItem(activeElement.parentElement.parentElement);
+            this.toggleNavItem(activeElement.parentElement.parentElement.parentElement);
         },
         toggleNavItem: function toggleNavItem(elem) {
             elem.classList.toggle('active');

@@ -1048,6 +1048,14 @@ header .documentation-nav h2 {
   .docs aside h2 {
     font-size: 20px;
     margin: 0;
+    position: relative;
+  }
+
+  .docs aside h2:after {
+    content: '\25B8';
+    position: absolute;
+    right: 0;
+    font-size: 14px;
   }
 
   .docs aside h2:hover {
@@ -1060,12 +1068,20 @@ header .documentation-nav h2 {
     padding: 15px;
   }
 
-  .docs aside > ul > li ul {
-    display: none;
+  .docs aside > ul > li:last-of-type {
+    border-bottom: 1px solid #F2F2F2;
   }
 
-  .docs aside > ul > li ul.active {
+  .docs aside > ul > li.active h2:after {
+    content: '\25BE';
+  }
+
+  .docs aside > ul > li.active ul {
     display: block;
+  }
+
+  .docs aside > ul > li ul {
+    display: none;
   }
 
   .docs aside ul {

@@ -80,24 +80,44 @@
             h2 {
                 font-size: 20px;
                 margin: 0;
+                position: relative;
+
+                &:after {
+                    content: '\25B8';
+                    position: absolute;
+                    right: 0;
+                    font-size: 14px;
+                }
 
                 &:hover {
                     cursor: pointer;
                     color: $color-primary;
                 }
             }
+ 
 
             > ul {
                 > li {
                     border-top: 1px solid $color-background__accent;
                     padding: 15px;
 
-                    ul {
-                        display: none;
+                    &:last-of-type {
+                        border-bottom: 1px solid $color-background__accent;
+                    }
 
-                        &.active {
+                    &.active {
+                        h2 {
+                            &:after {
+                                content: '\25BE';
+                            }
+                        }
+                        ul {
                             display: block;
                         }
+                    }
+
+                    ul {
+                        display: none;
                     }
                 }
             }
