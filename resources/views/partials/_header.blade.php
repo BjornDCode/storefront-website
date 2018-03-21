@@ -3,7 +3,7 @@
         <div class="container">
             <div class="logo">
                 <a href="/">
-                    <img src="images/logo.png" alt="Storefront Logo">
+                    <img src="images/logo.svg" alt="Storefront Logo">
                 </a>
             </div>
             <div class="nav">

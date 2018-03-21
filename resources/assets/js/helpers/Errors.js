@@ -9,6 +9,7 @@ export default class Errors {
     any() {
         const errors = Object.assign({}, this.errors);
         delete errors['server'];
+        delete errors['card'];
         return !isEmpty(errors);
     }
 

@@ -47,9 +47,7 @@ export default {
         card = elements.create('card', options);
         card.mount(this.$refs.card);
 
-        tippy('.tooltip', {
-            
-        });
+        tippy('.tooltip');
     },
 
     methods: {
