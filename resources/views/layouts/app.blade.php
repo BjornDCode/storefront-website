@@ -6,7 +6,7 @@
 
         <title>Storefront JS</title>
 
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="/css/app.css">
         <link rel="stylesheet" href="https://use.typekit.net/ime7qlg.css">
     </head>
     <body>
@@ -16,6 +16,6 @@
         </div>
 
         <script src="https://js.stripe.com/v3/"></script>
-        <script src="js/app.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>

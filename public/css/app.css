@@ -442,14 +442,14 @@ header {
   position: fixed;
   width: 100%;
   border-bottom: 2px solid transparent;
+  z-index: 10;
   -webkit-transition: all 135ms ease-out;
   transition: all 135ms ease-out;
 }
 
 header.fixed {
-  background-color: white;
+  background-color: #fff;
   border-color: #545E6B;
-  z-index: 10;
 }
 
 header .container {
@@ -478,6 +478,31 @@ header nav {
   right: 0;
   height: 100vh;
   background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 135ms ease-out;
+  transition: opacity 135ms ease-out;
+}
+
+header nav.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+header nav.open .nav-inner {
+  pointer-events: all;
+}
+
+header nav.open a {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+header nav .nav-inner {
+  height: 100%;
+  overflow-y: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -491,22 +516,13 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: opacity 135ms ease-out;
-  transition: opacity 135ms ease-out;
 }
 
-header nav.open {
-  opacity: 1;
-  pointer-events: all;
-}
-
-header nav.open a {
-  opacity: 1;
-  pointer-events: all;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+header nav .nav-inner.documentationOpen {
+  padding: 30px 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 header nav a {
@@ -564,6 +580,36 @@ header nav a.active:after {
   background-color: #545E6B;
 }
 
+header .documentation-nav {
+  display: none;
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+header .documentation-nav.open {
+  display: block;
+}
+
+header .documentation-nav ul {
+  padding: 0;
+}
+
+header .documentation-nav li {
+  text-align: center;
+}
+
+header .documentation-nav li:before {
+  display: none;
+}
+
+header .documentation-nav li a {
+  font-size: 18px;
+}
+
+header .documentation-nav h2 {
+  font-size: 22px;
+}
+
 @media (min-width: 768px) {
   header .container {
     max-width: none;
@@ -598,6 +644,10 @@ header nav a.active:after {
     opacity: 1;
     pointer-events: all;
     height: auto;
+  }
+
+  header nav .nav-inner {
+    padding: 0 !important;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -606,6 +656,7 @@ header nav a.active:after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    overflow-y: hidden;
   }
 
   header nav a {
@@ -655,6 +706,14 @@ header nav a.active:after {
   header nav a:hover:after {
     -webkit-transform: translateX(-50%) scaleX(1);
             transform: translateX(-50%) scaleX(1);
+  }
+
+  header .documentation-toggle-arrow {
+    display: none;
+  }
+
+  header .documentation-nav {
+    display: none !important;
   }
 }
 

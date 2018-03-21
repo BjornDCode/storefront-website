@@ -44,7 +44,7 @@ class Documentation
     }
 
     public static function replaceLinks($version, $content) {
-        return str_replace('{{ version }}', $version, $content);
+        return str_replace('{{version}}', $version, $content);
     }
 
     public function sectionExists($version, $page) 

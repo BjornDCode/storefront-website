@@ -5,11 +5,13 @@
             return {
                 header: document.querySelector('header'),
                 fixed: false,
-                open: false
+                open: false,
+                documentationNavOpen: false
             }
         },
 
         mounted() {
+            window.addEventListener('loaded', e => this.handleScroll(e));
             window.addEventListener('scroll', e => this.handleScroll(e))
         },
 

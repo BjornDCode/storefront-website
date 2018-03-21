@@ -13857,12 +13857,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             header: document.querySelector('header'),
             fixed: false,
-            open: false
+            open: false,
+            documentationNavOpen: false
         };
     },
     mounted: function mounted() {
         var _this = this;
 
+        window.addEventListener('loaded', function (e) {
+            return _this.handleScroll(e);
+        });
         window.addEventListener('scroll', function (e) {
             return _this.handleScroll(e);
         });
