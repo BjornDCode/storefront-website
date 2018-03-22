@@ -10,6 +10,20 @@
             <docs-navigation inline-template>
                 <aside>
                     {!! $index !!}
+                    <div class="switcher">
+                        <button class="button" @click="toggleSwitcher">
+                            {{ $currentVersion }}
+                        </button>
+                        <ul v-if="switcherOpen">
+                            @foreach($versions as $key => $display)
+                                <li>
+                                    <a href="{{ url('docs/'.$key.$currentSection) }}">
+                                        {{ $display }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </aside>
             </docs-navigation>
             <article>

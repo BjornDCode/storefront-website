@@ -56,7 +56,7 @@ class Documentation
 
     public static function getDocVersions() {
         return [
-            '1.0' => '1.0'
+            '1.0' => '1.0',
         ];
     }
 

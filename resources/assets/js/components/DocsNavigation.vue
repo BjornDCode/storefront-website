@@ -1,5 +1,12 @@
 <script>
     export default {
+
+        data() {
+            return {
+                switcherOpen: false
+            }
+        },
+
         mounted() {
             this.setActiveElement();
             document.querySelectorAll('aside h2').forEach(elem => {
@@ -21,6 +28,10 @@
 
             toggleNavItem(elem) {
                 elem.classList.toggle('active');
+            },
+
+            toggleSwitcher(e) {
+                this.switcherOpen = !this.switcherOpen;
             }
 
         }

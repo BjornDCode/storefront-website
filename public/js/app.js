@@ -35830,6 +35830,11 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            switcherOpen: false
+        };
+    },
     mounted: function mounted() {
         var _this = this;
 
@@ -35854,6 +35859,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         toggleNavItem: function toggleNavItem(elem) {
             elem.classList.toggle('active');
+        },
+        toggleSwitcher: function toggleSwitcher(e) {
+            this.switcherOpen = !this.switcherOpen;
         }
     }
 });
