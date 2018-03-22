@@ -286,6 +286,18 @@ table {
   font-weight: bold;
 }
 
+@font-face {
+  src: url(/fonts/FiraCode-Regular.ttf?1a77fe6d9f399212fcfcfde790ce66b2) format("truetype");
+  font-family: 'FiraCode';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(/fonts/FiraCode-Medium.ttf?e613bf534959b8c52533e77ea0cee44e) format("truetype");
+  font-family: 'FiraCode';
+  font-weight: bold;
+}
+
 body {
   font-family: 'Avenir', sans-serif;
   color: #788699;
@@ -962,6 +974,21 @@ header .documentation-nav h2 {
   padding-top: 80px;
 }
 
+.docs h1,
+.docs h2,
+.docs h3,
+.docs h4,
+.docs h5,
+.docs h6 {
+  font-family: brandon-grotesque;
+  color: #545E6B;
+  margin: 0;
+}
+
+.docs article a:hover {
+  border-bottom: 2px solid #FFE273;
+}
+
 .docs h1 {
   font-size: 48px;
   margin-bottom: 30px;
@@ -969,12 +996,24 @@ header .documentation-nav h2 {
 
 .docs h2 {
   font-size: 36px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 50px;
   text-align: left;
 }
 
 .docs h3 {
   font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.docs h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.docs h5 {
+  font-size: 20px;
+  font-weight: normal;
   margin-bottom: 10px;
 }
 
@@ -985,6 +1024,41 @@ header .documentation-nav h2 {
   margin-bottom: 30px;
 }
 
+.docs code {
+  background-color: #F2F2F2;
+  font-family: 'FiraCode';
+  font-size: 14px;
+  padding: 2px 5px;
+  font-weight: bold;
+}
+
+.docs pre {
+  background-color: #F2F2F2;
+  padding: 30px;
+}
+
+.docs pre code {
+  line-height: 2;
+  font-weight: normal;
+}
+
+.docs blockquote {
+  position: relative;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.docs blockquote:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 4px;
+  background-color: #F2F2F2;
+}
+
 .docs li {
   margin-bottom: 10px;
 }
@@ -992,6 +1066,13 @@ header .documentation-nav h2 {
 .docs li:before {
   content: '-';
   background: none;
+}
+
+.docs a[name] {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden;
 }
 
 .docs h1 + ul li {
@@ -1535,5 +1616,99 @@ input[type=email] {
   /* Firefox 18- */
   color: #545E6B;
   letter-spacing: 1px;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
 }
 

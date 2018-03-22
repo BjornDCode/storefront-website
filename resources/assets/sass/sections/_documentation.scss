@@ -2,6 +2,20 @@
 .docs {
     padding-top: 80px;
 
+    h1, h2, h3, h4, h5, h6 {
+        font-family: brandon-grotesque;
+        color: $color-secondary;
+        margin: 0;
+    }
+
+    article {
+        a {
+            &:hover {
+                border-bottom: 2px solid $color-primary;
+            }
+        }
+    }
+
     h1 {
         font-size: 48px;
         margin-bottom: 30px;
@@ -9,7 +23,8 @@
 
     h2 {
         font-size: 36px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        margin-top: 50px;
         text-align: left;
     }
 
@@ -18,10 +33,55 @@
         margin-bottom: 10px;
     }
 
+    h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    h5 {
+        font-size: 20px;
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+
     p, li {
         font-size: 18px;
         line-height: 34px;
         margin-bottom: 30px;
+    }
+
+    code {
+        background-color: $color-background__accent;
+        font-family: 'FiraCode';
+        font-size: 14px;
+        padding: 2px 5px;
+        font-weight: bold;
+    }
+
+    pre {
+        background-color: $color-background__accent;
+        padding: 30px;
+        code {
+            line-height: 2;
+            font-weight: normal;
+        }
+    }
+
+    blockquote {
+        position: relative;
+        padding-left: 30px;
+        font-weight: bold;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 4px;
+            background-color: $color-background__accent;
+        }
     }
 
     li {
@@ -32,6 +92,14 @@
         }
     }
 
+    // Adjust offset when linkin to the same page to deal with the fixed header
+    a[name] {
+        display: block;
+        position: relative;
+        top: -80px;
+        visibility: hidden;
+    }
+
     h1 + ul {
         li {
             margin-bottom: 0;
@@ -39,7 +107,6 @@
             &:before {
                 content: '#';
                 color: $color-primary;
-                // font-size: 12px;
             }
 
             ul {

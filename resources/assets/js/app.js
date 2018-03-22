@@ -1,4 +1,7 @@
 var VueScrollTo = require('vue-scrollto');
+import hljs from 'highlightjs';
+
+hljs.initHighlightingOnLoad();
 
 /**
  * First we will load all of this project's JavaScript dependencies which
