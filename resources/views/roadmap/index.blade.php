@@ -15,12 +15,12 @@
                     <div class="list">
                         <roadmap-feature title="Search">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sapiente aliquid dolor ab iure ut tempore quisquam possimus modi veritatis! Mollitia, atque quisquam consequatur voluptatibus harum voluptatem officiis. Quae, libero!
+                                A search feature allowing users to search products, collections, vendors and more. The feature will contain components for handling search and views for showing search results.
                             </p>
                         </roadmap-feature>
                         <roadmap-feature title="Product Filtering">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sapiente aliquid dolor ab iure ut tempore quisquam possimus modi veritatis! Mollitia, atque quisquam consequatur voluptatibus harum voluptatem officiis. Quae, libero!
+                                A set of components that will allow users to filter products on product pages. Users will be able to filter based on different product variants, collections and vendors. 
                             </p>
                         </roadmap-feature>
                     </div>
@@ -31,12 +31,12 @@
                     <div class="list">
                         <roadmap-feature title="Customer Authentication">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sapiente aliquid dolor ab iure ut tempore quisquam possimus modi veritatis! Mollitia, atque quisquam consequatur voluptatibus harum voluptatem officiis. Quae, libero!
+                                An authentication system for customers. If customers create an account they will be able to save their cart across devices, view previous orders and change billing/shipping addresses. 
                             </p>
                         </roadmap-feature>
                         <roadmap-feature title="Improved Checkout">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sapiente aliquid dolor ab iure ut tempore quisquam possimus modi veritatis! Mollitia, atque quisquam consequatur voluptatibus harum voluptatem officiis. Quae, libero!
+                                An improved checkout experience for customers. In the current version of Storefront users are sent to the default Shopify checkout. The new checkout features will allow developers to create unique checkout experiences within thier own apps.
                             </p>
                         </roadmap-feature>
                     </div>
@@ -47,22 +47,11 @@
                     <div class="list">
                         <roadmap-feature title="React Library">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sapiente aliquid dolor ab iure ut tempore quisquam possimus modi veritatis! Mollitia, atque quisquam consequatur voluptatibus harum voluptatem officiis. Quae, libero!
+                                A React version of Storefront.
                             </p>
                         </roadmap-feature>
                     </div>
                 </div>
-    
-{{--                 <div class="group">
-                    <h3>Other Ideas</h3>
-                    <div class="list">
-                        <roadmap-feature title="React Library">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sapiente aliquid dolor ab iure ut tempore quisquam possimus modi veritatis! Mollitia, atque quisquam consequatur voluptatibus harum voluptatem officiis. Quae, libero!
-                            </p>
-                        </roadmap-feature>
-                    </div>
-                </div> --}}
 
             </div>
         </div>

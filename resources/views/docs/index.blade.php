@@ -11,7 +11,7 @@
                 <aside>
                     {!! $index !!}
                     <div class="switcher">
-                        <button class="button" @click="toggleSwitcher">
+                        <button class="button small" @click="toggleSwitcher">
                             {{ $currentVersion }}
                         </button>
                         <ul v-if="switcherOpen">

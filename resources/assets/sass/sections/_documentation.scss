@@ -16,6 +16,10 @@
         }
     }
 
+    b {
+        font-weight: bold;
+    }
+
     h1 {
         font-size: 48px;
         margin-bottom: 30px;
@@ -56,14 +60,17 @@
         font-size: 14px;
         padding: 2px 5px;
         font-weight: bold;
+        white-space: nowrap;
     }
 
     pre {
+        margin-bottom: 30px;
         background-color: $color-background__accent;
         padding: 30px;
         code {
             line-height: 2;
             font-weight: normal;
+            white-space: pre;
         }
     }
 
@@ -86,10 +93,21 @@
 
     li {
         margin-bottom: 10px;
-        &:before {
-            content: '-';
-            background: none;
+    }
+
+    ul {
+        li {
+            &:before {
+                content: '-';
+                background: none;
+            }
         }
+    }
+
+    ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-bottom: 30px;
     }
 
     // Adjust offset when linkin to the same page to deal with the fixed header

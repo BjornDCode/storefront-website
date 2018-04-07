@@ -989,6 +989,10 @@ header .documentation-nav h2 {
   border-bottom: 2px solid #FFE273;
 }
 
+.docs b {
+  font-weight: bold;
+}
+
 .docs h1 {
   font-size: 48px;
   margin-bottom: 30px;
@@ -1030,9 +1034,11 @@ header .documentation-nav h2 {
   font-size: 14px;
   padding: 2px 5px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .docs pre {
+  margin-bottom: 30px;
   background-color: #F2F2F2;
   padding: 30px;
 }
@@ -1040,6 +1046,7 @@ header .documentation-nav h2 {
 .docs pre code {
   line-height: 2;
   font-weight: normal;
+  white-space: pre;
 }
 
 .docs blockquote {
@@ -1063,9 +1070,15 @@ header .documentation-nav h2 {
   margin-bottom: 10px;
 }
 
-.docs li:before {
+.docs ul li:before {
   content: '-';
   background: none;
+}
+
+.docs ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 
 .docs a[name] {
